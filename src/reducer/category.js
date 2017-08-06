@@ -2,6 +2,7 @@
 
 //reducers define initial state, and any changes that can be made to it
 
+//keep the reducer PURE - don't call impure functions (ie - Date.now() or Math.random())
 let intialState = []
 export default (state=intialState, action) => {
   let {type, payload} = action
