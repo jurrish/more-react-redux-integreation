@@ -2,9 +2,7 @@ import React from 'react';
 //binds our store to our components from react-redux - this allows us to grab parts of state and pass it to our components through dispatch.
 import { connect } from 'react-redux';
 import {
-  categoryCreate as categoryActionCreate,
-  categoryUpdate as categoryActionUpdate,
-  categoryDelete as categoryActionDelete,
+  categoryCreate as categoryActionCreate
 } from '../../action/category-actions.js';
 
 //output from our action creator named categoryCreate:
@@ -18,16 +16,16 @@ import {
 // }
 
 
-
+import CategoryItem from '../category-item/index.js'
 import CategoryForm from '../category-form/index.js';
 
 class DashboardContainer extends React.Component {
 
   componentDidMount () {
-      this.props.categoryCreate({ title: 'cool beans' }),
-      this.props.categoryCreate({ title: 'brap' }),
-      this.props.categoryCreate({ title: 'blap' }),
-      this.props.categoryCreate({ title: 'bink' })
+      // this.props.categoryCreate({ title: 'cool beans' }),
+      // this.props.categoryCreate({ title: 'brap' }),
+      // this.props.categoryCreate({ title: 'blap' }),
+      // this.props.categoryCreate({ title: 'bink' })
   }
 
   render() {
@@ -39,9 +37,8 @@ class DashboardContainer extends React.Component {
           buttonText='create category'
           onComplete={ this.props.categoryCreate } />
         { this.props.categories.map((item) =>
-          <div key={item.id}>
-            <h3> { item.title } </h3>
-          </div>
+
+          <CategoryItem key={ item } category={ item } />
         )}
       </main>
     )

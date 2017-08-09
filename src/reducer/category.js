@@ -3,8 +3,8 @@
 //reducers define initial state, and any changes that can be made to it
 
 //keep the reducer PURE - don't call impure functions (ie - Date.now() or Math.random())
-let intialState = []
-export default (state=intialState, action) => {
+let initialState = []
+export default (state=initialState, action) => {
   //actions have a type and a payload
   //in this case, the reducer takes in
   //actions with type: 'CATEGORY_CREATE', 'CATEGORY_UPDATE', 'CATEGORY_DELETE'
@@ -27,7 +27,7 @@ export default (state=intialState, action) => {
       return state.filter(category => category.id !== payload.id)
 
     case 'CATEGORY_RESET':
-      return intialState
+      return initialState
 
     default:
       return state
