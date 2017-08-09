@@ -25,7 +25,6 @@ class DashboardContainer extends React.Component {
       // this.props.categoryCreate({ title: 'cool beans' }),
       // this.props.categoryCreate({ title: 'brap' }),
       // this.props.categoryCreate({ title: 'blap' }),
-      // this.props.categoryCreate({ title: 'bink' })
   }
 
   render() {
@@ -38,7 +37,7 @@ class DashboardContainer extends React.Component {
           onComplete={ this.props.categoryCreate } />
         { this.props.categories.map((item) =>
 
-          <CategoryItem key={ item } category={ item } />
+          <CategoryItem key={item.id} category={ item } />
         )}
       </main>
     )
