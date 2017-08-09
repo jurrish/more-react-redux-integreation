@@ -7,6 +7,11 @@ describe('testing category reducer', () => {
     expect(result).toEqual([]);
   })
 
+  test('if the action type isnt registered it will return the state', () => {
+    let result = categoryReducer(0, { type: null})
+    expect(result).toEqual(0);
+  })
+
   test('CATEGORY_CREATE should append to the array', () => {
     let action = {
       type: 'CATEGORY_CREATE',
