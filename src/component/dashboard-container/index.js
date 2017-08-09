@@ -48,7 +48,7 @@ class DashboardContainer extends React.Component {
 const mapStateToProps = (state) => {
   //whatever we map here gets returned as props
   return {
-    categories: state,
+    categories: state.categorys,
   }
 }
 

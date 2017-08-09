@@ -5,6 +5,7 @@ export default (state=initialState, action) => {
 
   switch(type) {
 
+//NOTE: every category has multiple cards
 //when we create a category, return a property on state that is the category's id, and initialize it with an empty array as its value (we can store cards for that category here)
     case 'CATEGORY_CREATE':
       return { ...state, [payload.id]: [] }
